@@ -9,11 +9,12 @@ angular.module('sgb-screen-profile-update', ['megazord'])
         $scope.user = {}; 
 
         $scope.checkField = function (field,regexp) {
+            if (!field || !regexp) return true; 
             if(regexp) {
                 var exp = new RegExp(regexp);
                 return (exp.test(field));
             }
-            return true; 
+            
         }
 
         $scope.checkPassword = function(field, regexp) {
