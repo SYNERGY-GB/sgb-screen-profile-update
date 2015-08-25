@@ -7,24 +7,6 @@ angular.module('sgb-screen-profile-update', ['megazord'])
         $scope.data = $stateParams.data; 
         $scope.user = {}; 
 
-        $scope.formValidated = function () {
-            return $scope.passwordIcon==true && 
-                   $scope.userIcon==true && 
-                   $scope.emailIcon==true &&
-                   $scope.user.accept;
-        }
-    
-        $scope.next = function () {
-            if ($scope.formValidated()) {
-                _router.fireEvent(
-                    {
-                     name: 'nextScreen', 
-                     params: {}
-                    }
-                );
-            }
-        }
-
         $scope.checkField = function (field,regexp) {
             if(regexp) {
                 var exp = new RegExp(regexp);
@@ -54,6 +36,35 @@ angular.module('sgb-screen-profile-update', ['megazord'])
                 $scope.emailIcon = $scope.checkField(field,regexp);
                 $scope.emailIcon=$scope.user.email.length ==0?undefined: $scope.emailIcon;
             //}, 800 ); ;             
+        }
+
+
+        $scope.formValidated = function () {
+            return $scope.checkField($scope.user.username, $scope._screenParams.userRegexp) && 
+                   $scope.checkField($scope.user.password, $scope._screenParams.passwordRegexp) && 
+                   $scope.checkField($scope.user.email, $scope._screenParams.emailRegexp) && 
+                   $scope.user.accept;
+        }
+    
+        $scope.next = function () {
+            if ($scope.formValidated()) {
+                _router.fireEvent(
+                    {
+                     name: 'nextScreen', 
+                     params: {}
+                    }
+                );
+            }
+        }
+
+        $scope.goToTerms = function() {
+            _router.fireEvent(
+                    {
+                     name: 'goToTerms', 
+                     params: {}
+                    }
+            );
+            
         }
 
     }]);
