@@ -7,14 +7,23 @@ angular.module('sgb-screen-profile-update', ['megazord'])
         _screen.initialize($scope, _screenParams);
         $scope.data = $stateParams.data; 
         $scope.user = {}; 
+
+        $scope.formValidated = function () {
+            return $scope.passwordIcon==true && 
+                   $scope.userIcon==true && 
+                   $scope.emailIcon==true &&
+                   $scope.user.accept;
+        }
     
         $scope.next = function () {
-            _router.fireEvent(
-                {
-                 name: 'nextScreen', 
-                 params: {}
-                }
-            );
+            if ($scope.formValidated()) {
+                _router.fireEvent(
+                    {
+                     name: 'nextScreen', 
+                     params: {}
+                    }
+                );
+            }
         }
 
         $scope.checkField = function (field,regexp) {
