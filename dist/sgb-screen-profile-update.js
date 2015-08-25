@@ -6,43 +6,48 @@ angular.module('sgb-screen-profile-update', ['megazord'])
                 function ($scope, _router, _screen, _screenParams, $stateParams, $timeout) {
         _screen.initialize($scope, _screenParams);
         $scope.data = $stateParams.data; 
-        $scope.user = {};
-        //$scope.userIcon = false; 
-
-        $scope.forgotPass = function () {
+        $scope.user = {}; 
+    
+        $scope.next = function () {
             _router.fireEvent(
                 {
-                 name: 'forgotPassword', 
+                 name: 'nextScreen', 
                  params: {}
                 }
             );
         }
 
-        $scope.checkPassword = function() {
-            //Dummy implementation
-            $timeout(function() {
-                $scope.passwordIcon=$scope.user.password.length>3;  
+        $scope.checkField = function (field,regexp) {
+            if(regexp) {
+                var exp = new RegExp(regexp);
+                return (exp.test(field));
+            }
+            return true; 
+        }
+
+        $scope.checkPassword = function(field, regexp) {
+            
+            //$timeout(function() {
+                $scope.passwordIcon=$scope.checkField(field,regexp);
                 $scope.passwordIcon=$scope.user.password.length==0?undefined:$scope.passwordIcon; 
-            }, 800 ); 
+            //}, 800 ); 
         }
 
-        $scope.checkUsername = function() {
-            //Dummy implementation
-            $timeout(function() {
-                $scope.userIcon=$scope.user.username.length>3;  
+        $scope.checkUsername = function(field,regexp) {
+            
+            //$timeout(function() {
+                $scope.userIcon = $scope.checkField(field,regexp);
                 $scope.userIcon=$scope.user.username.length==0?undefined:$scope.userIcon; 
-            }, 800 );        
+            //}, 800 );        
         }
 
-        $scope.checkEmail = function() {
-            //Dummy implementation
-            $timeout(function() {
-                $scope.emailIcon=$scope.user.email.length>3;  
-                $scope.emailIcon=$scope.user.email.length==0?undefined:$scope.emailIcon; 
-            }, 800 ); ;             
+        $scope.checkEmail = function(field, regexp) {
+            //$timeout(function() {
+                $scope.emailIcon = $scope.checkField(field,regexp);
+                $scope.emailIcon=$scope.user.email.length ==0?undefined: $scope.emailIcon;
+            //}, 800 ); ;             
         }
 
-        //Add your controller logic here.
     }]);
 
 },{}]},{},[1]);

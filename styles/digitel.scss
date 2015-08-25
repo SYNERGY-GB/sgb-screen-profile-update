@@ -216,7 +216,7 @@ input[type] {
 
  .dark-background {
 	@include standard-background($dark-background);
-	margin-top: -1.5em;
+	margin-top: -1.8em;
 	border-radius: 6px;
 	padding-left: 0.6em;
 	padding-right: 0.6em;
@@ -253,8 +253,10 @@ p {
 }
 
 input[type="checkbox"] {
-	float:left;
+	position: relative; 
+	right: 0.5em; 
 }
+
 
 .icon {
     color:white; 

@@ -6,7 +6,6 @@
 		</div>
 
 		<div class="push-content">
-
 		    <!--Welcome image-->
 		    <div class="text-center welcome-background" ng-show="data.welcomeMessage">
 		        <h3 class="thick"> {{data.welcomeMessage}} </h3>
@@ -14,16 +13,18 @@
 
 		    <hr class="separator"/>
 
-		    <div class="dark-background text-center">
-		        <h5 class="pull-text wrap" ng-show="data.infoMessage"> {{data.infoMessage}}</h5>
+		    <div class="dark-background">
+	
+		        <h5 class="pull-text text-center" ng-show="data.infoMessage"> {{data.infoMessage}}</h5>
 
 		        <!-- Password -->
 		        <div class="row item item-input app-input pwd-background item-icon-right" >
 		            <div class="col col-offset-20 col-75">
-		                <input type="password" data-ng-model="user.password" ng-change="checkPassword()"
+		                <input type="password" data-ng-model="user.password" 
+		                		ng-change="checkPassword(user.password,_screenParams.pwdRegexp)"
 		                        placeholder="{{'update_new_password' | translate}}" />
 		            </div>
-		            <i class="icon ion-checkmark" ng-show="passwordIcon"></i>
+		            <i class="icon ion-checkmark" ng-show="passwordIcon===true"></i>
 		            <i class="icon ion-close-round" ng-show="passwordIcon===false"></i>
 		        </div>
 		        <br/>
@@ -31,41 +32,41 @@
 		        <!-- Name -->
 		        <div class="row item item-input app-input name-background item-icon-right" >
 		            <div class="col col-offset-20 col-75">
-		                <input type="text" data-ng-model="user.username" ng-change="checkUsername()"
+		                <input type="text" data-ng-model="user.username" 
+		                		ng-change="checkUsername(user.username, _screenParams.userRegexp)"
 		                        placeholder="{{'update_name' | translate}}" />
 		            </div>
-   		            <i class="icon ion-checkmark" ng-show="userIcon"></i>
+   		            <i class="icon ion-checkmark" ng-show="userIcon===true"></i>
 		            <i class="icon ion-close-round" ng-show="userIcon===false"></i>
-
 		        </div>
 		        <br/>
 		  
 		        <!-- Email validation-->
 		        <div class="row item item-input app-input email-background item-icon-right" >
 		            <div class="col col-offset-20 col-75">
-		                <input type="text" data-ng-model="user.email" ng-change="checkEmail()"
-		                        placeholder="{{'update_email' | translate}}" />
+		                <input type="text" data-ng-model="user.email"
+		                	   ng-change="checkEmail(user.email, _screenParams.emailRegexp)"
+		                       placeholder="{{'update_email' | translate}}" />
 		            </div>
-		            <i class="icon ion-checkmark" ng-show="emailIcon"></i>
+		            <i class="icon ion-checkmark" ng-show="emailIcon===true"></i>
 		            <i class="icon ion-close-round" ng-show="emailIcon===false"></i>
 		        </div>
 		        <br/>
-		  
+	
 		  		<!-- terms checkbox -->
 	  			<div class="row">
-	  				<input class="col col-10" type="checkbox" ng-model="user.accept"/> 
+	  				<input  type="checkbox" ng-model="user.accept"/> 
 	  				<p> {{'update_terms' | translate}} </p>
 	  			</div>
 		  	
 
-
-		        <!-- Login button -->    
-		        <label class="row item app-input login-button-background "
-		               data-ng-click="doLogin()">
+		        <!-- Next button -->    
+		        <div class="row item app-input login-button-background "
+		               data-ng-click="next()">
 		            <div class="col col-80 text-right">
 		               <p class="wrap"> {{'next_screen' | translate}} </p>
 		            </div>  
-		        </label>
+		        </div>
 
 		    </div> 
 		</div>
