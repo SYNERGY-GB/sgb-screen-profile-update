@@ -11,7 +11,7 @@
 		        <h3 class="thick"> {{data.welcomeMessage}} </h3>
 		    </div> 
 
-		    <hr class="separator"/>
+		    <hr class="separator"/ ng-show="data.welcomeMessage">
 
 		    <div class="dark-background">
 	
@@ -56,9 +56,9 @@
 		  		<!-- terms checkbox -->
 	  			<div class="row" ng.show="data.terms">
 	  				<input  type="checkbox" ng-model="user.accept"/> 
-	  				<p>{{data.termsBefore}}&nbsp</p>
+	  				<!--<p>{{data.termsBefore}}&nbsp</p>-->
 	  				<p ng-click="goToTerms()" ng-bind-html="data.terms"/>
-	  				<p>&nbsp{{data.termsAfter}}</p>
+	  				<!--<p>&nbsp{{data.termsAfter}}</p>-->
 	  			</div>
 		  	
 		        <!-- Next button -->    
@@ -69,8 +69,9 @@
 		            </div>  
 		        </div>
 
-		    </div> 
-		</div>
+		    </div>
+		</div> 
+		
 
     </ion-content>
 </ion-view>
