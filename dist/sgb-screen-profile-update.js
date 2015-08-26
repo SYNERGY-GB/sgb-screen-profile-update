@@ -7,15 +7,16 @@ angular.module('sgb-screen-profile-update', ['megazord'])
 
         _screen.initialize($scope, _screenParams);
         $scope.data = $stateParams.data; 
-        $scope.user = {}; 
+        $scope.user = {
+            username: '',
+            password: '',
+            email: ''
+        }; 
 
         $scope.checkField = function (field,regexp) {
-            if (!field || !regexp) return true; 
-            if(regexp) {
-                var exp = new RegExp(regexp);
-                return (exp.test(field));
-            }
-            
+            if (field===undefined || !regexp) return true; 
+            var exp = new RegExp(regexp);
+            return (exp.test(field));
         }
 
         $scope.checkPassword = function(field, regexp) {
@@ -38,7 +39,7 @@ angular.module('sgb-screen-profile-update', ['megazord'])
             return $scope.checkField($scope.user.username, $scope._screenParams.userRegexp) && 
                    $scope.checkField($scope.user.password, $scope._screenParams.passwordRegexp) && 
                    $scope.checkField($scope.user.email, $scope._screenParams.emailRegexp) && 
-                   $scope.user.accept;
+                   $scope.user.accept==true;
         }
     
         $scope.next = function () {
@@ -59,7 +60,6 @@ angular.module('sgb-screen-profile-update', ['megazord'])
                      params: {}
                     }
             );
-            
         }
 
     }]);
