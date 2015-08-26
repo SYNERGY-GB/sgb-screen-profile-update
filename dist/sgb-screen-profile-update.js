@@ -46,7 +46,7 @@ angular.module('sgb-screen-profile-update', ['megazord'])
             if ($scope.formValidated()) {
                 _router.fireEvent(
                     {
-                     name: 'nextScreen', 
+                     name: 'goTo', 
                      params: {}
                     }
                 );
