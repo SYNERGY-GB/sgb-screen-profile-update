@@ -20,16 +20,19 @@ angular.module('sgb-screen-profile-update', ['megazord'])
         }
 
         $scope.checkPassword = function(field, regexp) {
+            if (!$scope._screenParams.onScreenValidation) return; 
             $scope.passwordIcon=$scope.checkField(field,regexp);
             $scope.passwordIcon=$scope.user.password.length==0?undefined:$scope.passwordIcon; 
         }
 
         $scope.checkUsername = function(field,regexp) {
+            if (!$scope._screenParams.onScreenValidation) return; 
             $scope.userIcon = $scope.checkField(field,regexp);
             $scope.userIcon=$scope.user.username.length==0?undefined:$scope.userIcon;        
         }
 
         $scope.checkEmail = function(field, regexp) {
+            if (!$scope._screenParams.onScreenValidation) return; 
             $scope.emailIcon = $scope.checkField(field,regexp);
             $scope.emailIcon=$scope.user.email.length ==0?undefined: $scope.emailIcon;            
         }

@@ -36,7 +36,7 @@ $text-size: 14px !default;
 $input-height: 50px !default; 
 $input-border-radius: 4px !default; 
 $input-border-width: 1px !default; 
-$input-separation: -0.8em !default;
+$input-separation: 0.8em !default;
 $input-border-color: #ffffff !default;
 $input-text-color: #ffffff !default; 
 
@@ -64,9 +64,8 @@ $login-user-background: 'https://s3.amazonaws.com/megazord-framework/test/digite
 $login-pwd-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-03.svg'; 
 $login-btn-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-05.svg'; 
 $dark-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-07.svg';
-$signup-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-06.svg';
 $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-08.svg';
-$push: 60px; 
+$push: 12em; 
 
 
 /* Mixins */
@@ -148,7 +147,7 @@ p,h1,h2,h3,h4,h5,h6 {
 	border-radius: $input-border-radius;
 	border-width: $input-border-width;
 	margin-bottom: $input-separation;
-	border-color: $input-border-color;  
+	border: 1px solid $input-border-color;
 }
 
 /* Password and input text color */
@@ -226,13 +225,6 @@ input[type] {
 	@include push($push); 
 }
 
-.signup-background {
-	@include standard-background($signup-background);
-	padding-top:1.2em;
-	margin-right: -1em;
-	margin-left: -1em;
-	margin-top: 2.0em;
-}
 
  .pull-text {
 	padding-top:1em;
@@ -260,4 +252,8 @@ input[type="checkbox"] {
 
 .icon {
     color:white; 
+}
+
+.clear-button {
+	opacity:0.3; 
 }
