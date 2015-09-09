@@ -45,7 +45,7 @@ angular.module('sgb-screen-profile-update', ['megazord'])
                    $scope.user.accept==true;
         }
     
-        $scope.next = function () {
+        $scope.goTo = function () {
             if ($scope.formValidated()) {
                 _router.fireEvent(
                     {

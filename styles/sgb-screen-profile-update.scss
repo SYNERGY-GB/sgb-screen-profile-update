@@ -1,3 +1,114 @@
-//Define any sass variables and styles here.
-//They may be overridden by the application using the screen.
-//@import 'digitel'; 
+$app-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2.png';
+$app-logo: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-02.svg'; 
+$input-height: 50px !default; 
+$input-border-radius: 4px !default; 
+$input-border-width: 1px !default; 
+$input-separation: 0.8em !default;
+$input-border-color: #ffffff !default;
+$input-text-color: #ffffff !default; 
+$placeholder-color: #ffffff !important; 
+$icon-size: 200%; 
+
+/* SPECIFIC VARIABLES */
+
+$login-user-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-04.svg'; 
+$login-pwd-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-03.svg'; 
+$login-btn-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-05.svg'; 
+$dark-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-07.svg';
+$welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-08.svg';
+$push: 12em; 
+
+/* Mixins */
+
+@mixin standard-background  ($background) {
+	background: url($background) no-repeat center;
+	background-size: 100%;
+}
+
+@mixin standard-placeholder ($color) {
+	color: $color;  
+    opacity : 1; 
+}
+
+@mixin push($n) {
+	position:relative; 
+	top: $n; 
+}
+
+
+.app-background {
+	@include standard-background($app-background);
+}
+
+
+.name-background {
+	@include standard-background($login-user-background);
+}
+
+.pwd-background {
+	@include standard-background($login-pwd-background);
+}
+
+.email-background {
+	@include standard-background($login-pwd-background);
+}
+
+.login-button-background {
+	@include standard-background($login-btn-background);
+}
+
+.dark-background {
+	@include standard-background($dark-background);
+	margin-top: -1.8em;
+	padding-top: 1em;
+	padding-bottom: 2em;
+	padding-left: 0.6em;
+	padding-right: 0.6em;
+}
+
+
+.app-input  {
+	height: $input-height; 
+	border-radius: $input-border-radius;
+	border-width: $input-border-width;
+	margin-bottom: $input-separation;
+	border: 1px solid $input-border-color;
+}
+
+
+::-webkit-input-placeholder {
+  	@include standard-placeholder($placeholder-color);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	@include standard-placeholder($placeholder-color);
+}
+
+:-ms-input-placeholder {  
+	@include standard-placeholder($placeholder-color);
+}
+
+.wrap {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.push-content {
+	@include push($push); 
+}
+
+
+input[type="checkbox"] {
+	position: relative; 
+	right: 0.5em; 
+}
+
+
+.icon {
+    color:white; 
+    font-size: $icon-size; 
+}
+
+.button-opaque {
+	opacity:0.3; 
+}

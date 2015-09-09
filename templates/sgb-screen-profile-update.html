@@ -7,11 +7,7 @@
 
 		<div class="push-content">
 		    <!--Welcome image-->
-		    <div class="text-center welcome-background" ng-show="data.welcomeMessage">
-		        <h3 class="thick"> {{data.welcomeMessage}} </h3>
-		    </div> 
-
-		    <hr class="separator"/ ng-show="data.welcomeMessage">
+	        <h3 class="text-center thick" style="margin-bottom:2em"> {{data.welcomeMessage}} </h3>
 
 		    <div class="dark-background">
 	
@@ -58,9 +54,8 @@
 	  			</div>
 		  	
 		        <!-- Next button -->    
-		        <div class="row app-input login-button-background" 
-		        	 ng-class="{'clear-button' : _screenParams.onScreenValidation && !formValidated()}"
-		               data-ng-click="next()">
+		        <div class="row app-input login-button-background" data-ng-click="goTo()"
+		        	 ng-class="{'button-opaque' : _screenParams.onScreenValidation && !formValidated()}">
 		            <div class="col col-80 text-right">
 		               <p class="wrap" style="margin-top: 0.5em"> {{'next_screen' | translate}} </p>
 		            </div>  
