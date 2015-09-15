@@ -1,4 +1,4 @@
-$app-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2.png';
+/*$app-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2.png';
 $app-logo: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-02.svg'; 
 $input-height: 50px !default; 
 $input-border-radius: 4px !default; 
@@ -9,7 +9,7 @@ $input-text-color: #ffffff !default;
 $placeholder-color: #ffffff !important; 
 $icon-size: 200%; 
 
-/* SPECIFIC VARIABLES */
+// SPECIFIC VARIABLES 
 
 $login-user-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-04.svg'; 
 $login-pwd-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-03.svg'; 
@@ -18,7 +18,7 @@ $dark-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-logi
 $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-08.svg';
 $push: 12em; 
 
-/* Mixins */
+// Mixins 
 
 @mixin standard-background  ($background) {
 	background: url($background) no-repeat center;
@@ -111,4 +111,4 @@ input[type="checkbox"] {
 
 .button-opaque {
 	opacity:0.3; 
-}
+}*/
