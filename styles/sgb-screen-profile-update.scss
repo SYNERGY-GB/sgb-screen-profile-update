@@ -80,7 +80,7 @@ $push: 12em;
   	@include standard-placeholder($placeholder-color);
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {  
 	@include standard-placeholder($placeholder-color);
 }
 
