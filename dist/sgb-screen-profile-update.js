@@ -39,9 +39,9 @@ angular.module('sgb-screen-profile-update', ['megazord'])
 
 
         $scope.formValidated = function () {
-            return $scope.checkField($scope.user.username, $scope._screenParams.userRegexp) && 
-                   $scope.checkField($scope.user.password, $scope._screenParams.passwordRegexp) && 
-                   $scope.checkField($scope.user.email, $scope._screenParams.emailRegexp) && 
+            return $scope.checkField($scope.user.username, $scope._screenParams.usernameValidation) && 
+                   $scope.checkField($scope.user.password, $scope._screenParams.passwordValidation) && 
+                   $scope.checkField($scope.user.email, $scope._screenParams.emailValidation) && 
                    $scope.user.accept==true;
         }
     
