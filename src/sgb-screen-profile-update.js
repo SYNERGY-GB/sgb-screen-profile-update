@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('sgb-screen-profile-update', ['megazord'])
-    .controller('sgb-screen-profile-update-controller', ['$scope', '_router', '_screen', '_screenParams', '$stateParams',
-                function ($scope, _router, _screen, _screenParams, $stateParams) {
+    .controller('sgb-screen-profile-update-controller', ['$scope', '_router', '_screen', '_screenParams', '_data',
+                function ($scope, _router, _screen, _screenParams, _data) {
 
         _screen.initialize($scope, _screenParams);
-        $scope.data = $stateParams.data; 
+        $scope.data = _data; 
         $scope.user = {
             username: '',
             password: '',
