@@ -6,12 +6,15 @@ angular.module('sgb-screen-profile-update', ['megazord'])
                 function ($scope, _router, _screen, _screenParams, _data) {
 
         _screen.initialize($scope, _screenParams);
-        $scope.data = _data; 
-        $scope.user = {
-            username: '',
-            password: '',
-            email: ''
-        }; 
+
+        $scope.$on('$ionicView.beforeEnter', function(){
+            $scope.data = _data; 
+            $scope.user = {
+                username: '',
+                password: '',
+                email: ''
+            }; 
+        })
 
         $scope.checkField = function (field,regexp) {
             if (field===undefined || !regexp) return true; 
